@@ -13,6 +13,7 @@
   --teal: #7aa5a2;       /* botões / selos */
   --teal-deep: #4f807d;
   --teal-soft: #e4edec;
+  --teal-name: #1c7c79;  /* nome principal (turquesa, como no 1º site) */
 
   --line: #ded4c6;
 
@@ -152,7 +153,10 @@ img { display: block; max-width: 100%; }
   padding: 4px 34px 0;
 }
 .hero-name .display {
-  font-size: clamp(48px, 15vw, 66px);
+  font-size: clamp(46px, 13vw, 60px);
+  font-weight: 700;
+  color: var(--teal-name);
+  letter-spacing: 0.5px;
 }
 .role {
   padding: 18px 34px 0;

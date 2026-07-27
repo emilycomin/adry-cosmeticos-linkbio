@@ -140,9 +140,9 @@ export default function App() {
       {/* HERO */}
       <header className="hero-name">
         <h1 className="display">
-          ADRY
+          Adry
           <br />
-          COSMÉTICOS
+          Cosméticos
         </h1>
       </header>
       <p className="role">
