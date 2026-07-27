@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 /* ------------------------------------------------------------------ */
 /*  Dados do negócio                                                   */
@@ -13,31 +13,48 @@ const MAPS_EMBED =
 
 const wa = (msg) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`
 
-const LINKS = [
+const SERVICES = [
   {
+    key: 'loja',
     icon: '🛍️',
     title: 'Loja de Produtos',
     sub: 'Esmaltes, géis, decorações e acessórios',
-    href: wa('Olá! Vim pela bio e quero conhecer os produtos da Adry Cosméticos 💅'),
-    featured: true,
+    type: 'photos',
+    photos: [
+      './images/produto-1.jpg',
+      './images/produto-2.jpg',
+      './images/unhas-1.jpg',
+      './images/unhas-2.jpg',
+    ],
+    cta: {
+      label: 'Falar com a loja',
+      href: wa('Olá! Vim pela bio e quero conhecer os produtos da Adry Cosméticos 💅'),
+    },
   },
   {
+    key: 'manicure',
     icon: '💅',
-    title: 'Agendar Manicure',
-    sub: 'Alongamento, manutenção e esmaltação',
-    href: wa('Olá! Gostaria de agendar um horário de manicure na Adry Cosméticos 💅'),
+    title: 'Serviços de Manicure',
+    sub: 'Agende o seu horário',
+    type: 'list',
+    items: [
+      { label: 'Esmaltação em gel', href: wa('Olá! Quero agendar uma esmaltação em gel na Adry Cosméticos 💅') },
+      { label: 'Alongamentos', href: wa('Olá! Quero agendar um alongamento de unhas na Adry Cosméticos 💅') },
+      { label: 'Manutenção', href: wa('Olá! Quero agendar uma manutenção na Adry Cosméticos 💅') },
+    ],
   },
   {
+    key: 'cursos',
     icon: '🎓',
-    title: 'Curso Iniciante',
-    sub: 'Comece do zero na arte das unhas',
-    href: wa('Olá! Tenho interesse no curso INICIANTE de manicure da Adry Cosméticos 🎓'),
-  },
-  {
-    icon: '✨',
-    title: 'Curso de Aperfeiçoamento',
-    sub: 'Eleve o nível da sua técnica',
-    href: wa('Olá! Tenho interesse no curso de APERFEIÇOAMENTO da Adry Cosméticos ✨'),
+    title: 'Cursos',
+    sub: 'Aprenda ou aperfeiçoe sua técnica',
+    type: 'list',
+    items: [
+      { label: 'Iniciante', href: wa('Olá! Tenho interesse no curso Iniciante da Adry Cosméticos 🎓') },
+      { label: 'Cutilagem perfeita', href: wa('Olá! Tenho interesse no curso de Cutilagem perfeita da Adry Cosméticos 🎓') },
+      { label: 'Alongamento em gel', href: wa('Olá! Tenho interesse no curso de Alongamento em gel da Adry Cosméticos 🎓') },
+      { label: 'Esmaltação em gel', href: wa('Olá! Tenho interesse no curso de Esmaltação em gel da Adry Cosméticos 🎓') },
+    ],
   },
 ]
 
@@ -110,18 +127,105 @@ function useReveal() {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Localização com mapa no hover                                      */
+/* ------------------------------------------------------------------ */
+function Location() {
+  const [hover, setHover] = useState(false)
+  return (
+    <a
+      className="location"
+      href={MAPS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      aria-label="Ver no Google Maps"
+    >
+      <span className="loc-text">📍 {ADDRESS}</span>
+      <span className={`loc-map ${hover ? 'show' : ''}`}>
+        {hover && (
+          <iframe
+            title="Mapa da Adry Cosméticos"
+            src={MAPS_EMBED}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        )}
+      </span>
+    </a>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Card de serviço com submenu (accordion)                            */
+/* ------------------------------------------------------------------ */
+function ServiceCard({ svc, open, onToggle }) {
+  return (
+    <div className="service">
+      <button
+        type="button"
+        className={`link-card ${open ? 'open' : ''}`}
+        onClick={onToggle}
+        aria-expanded={open}
+      >
+        <span className="link-ico">{svc.icon}</span>
+        <span className="link-body">
+          <span className="link-title">{svc.title}</span>
+          <span className="link-sub">{svc.sub}</span>
+        </span>
+        <span className="link-arrow">›</span>
+      </button>
+
+      <div className={`submenu ${open ? 'open' : ''}`}>
+        <div className="submenu-inner">
+          {svc.type === 'photos' ? (
+            <>
+              <div className="submenu-photos">
+                {svc.photos.map((src, i) => (
+                  <img key={i} src={src} alt={`${svc.title} ${i + 1}`} loading="lazy" />
+                ))}
+              </div>
+              <a
+                className="submenu-cta"
+                href={svc.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {svc.cta.label} <span>›</span>
+              </a>
+            </>
+          ) : (
+            <ul className="submenu-list">
+              {svc.items.map((it) => (
+                <li key={it.label}>
+                  <a href={it.href} target="_blank" rel="noopener noreferrer">
+                    <span>{it.label}</span>
+                    <span className="sub-arrow">›</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
 /*  App                                                                */
 /* ------------------------------------------------------------------ */
 export default function App() {
   const ref = useReveal()
   const open = isOpenNow()
   const todayIdx = dayToHours(new Date().getDay())
+  const [openKey, setOpenKey] = useState(null)
+  const toggle = (key) => setOpenKey((cur) => (cur === key ? null : key))
 
   return (
     <div className="page" ref={ref}>
       {/* HERO */}
       <header className="hero">
-        <p className="brand-script">bem-vinda à</p>
         <div className="avatar-wrap">
           <div className="avatar-ring" />
           <img className="avatar" src="./images/adry-perfil.jpg" alt="Adriana — Adry Cosméticos" />
@@ -132,32 +236,24 @@ export default function App() {
         </div>
         <h1 className="title">Adry Cosméticos</h1>
         <p className="subtitle">
-          Produtos para manicure · Atendimento · Cursos
+          Produtos • Cursos • Serviços de Manicure
         </p>
         <div className="rating">
           <span className="stars">★★★★★</span>
           <span>5,0 · 7 avaliações no Google</span>
         </div>
-        <div className="location">📍 Cachoeirinha · Rio Grande do Sul</div>
+        <Location />
       </header>
 
-      {/* LINKS PRINCIPAIS */}
-      <section className="section links reveal" aria-label="Links principais">
-        {LINKS.map((l) => (
-          <a
-            key={l.title}
-            className={`link-card ${l.featured ? 'featured' : ''}`}
-            href={l.href}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="link-ico">{l.icon}</span>
-            <span className="link-body">
-              <span className="link-title">{l.title}</span>
-              <span className="link-sub">{l.sub}</span>
-            </span>
-            <span className="link-arrow">›</span>
-          </a>
+      {/* SERVIÇOS (com submenu) */}
+      <section className="section links reveal" aria-label="Serviços">
+        {SERVICES.map((svc) => (
+          <ServiceCard
+            key={svc.key}
+            svc={svc}
+            open={openKey === svc.key}
+            onToggle={() => toggle(svc.key)}
+          />
         ))}
       </section>
 
