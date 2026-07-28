@@ -76,7 +76,6 @@ export default function CursoAlongamento() {
           <br />
           em Gel
         </h1>
-        <p className="course-sub">com Molde F1 e Fibra de Vidro</p>
         <p className="course-tagline">“Dando asas ao seu talento”</p>
 
         <div className="course-hero-img">
