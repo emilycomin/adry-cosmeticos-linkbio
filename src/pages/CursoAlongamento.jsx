@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { wa, useReveal, IconWhatsapp } from '../lib.jsx'
 
@@ -56,6 +57,7 @@ const DEPOIMENTOS = [
 
 export default function CursoAlongamento() {
   const ref = useReveal()
+  const [zoom, setZoom] = useState(null)
 
   return (
     <div className="course" ref={ref}>
@@ -78,7 +80,7 @@ export default function CursoAlongamento() {
         <p className="course-tagline">“Dando asas ao seu talento”</p>
 
         <div className="course-hero-img">
-          <img src="/images/cursos/curso-turma.jpg" alt="Turma do curso de alongamento em gel" />
+          <img src="/images/produto-1.jpg" alt="Adriana demonstrando alongamento em gel" />
         </div>
 
         <p className="instructor">
@@ -133,6 +135,22 @@ export default function CursoAlongamento() {
         </ol>
       </section>
 
+      {/* BÔNUS */}
+      <section className="course-section reveal">
+        <h2 className="section-label">Bônus inclusos</h2>
+        <div className="bonus-list">
+          {BONUS.map((b) => (
+            <div className="bonus-item" key={b.t}>
+              <span className="bonus-ico">{b.icon}</span>
+              <span className="bonus-body">
+                <strong>{b.t}</strong>
+                <span>{b.d}</span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* DURAÇÃO */}
       <section className="course-section reveal">
         <div className="info-cards">
@@ -161,13 +179,17 @@ export default function CursoAlongamento() {
         </div>
       </section>
 
-      {/* DEPOIMENTOS (prints) */}
+      {/* DEPOIMENTOS (galeria) */}
       <section className="course-section reveal">
         <h2 className="section-label">O que dizem as alunas</h2>
-        <p className="swipe-hint">deslize para ver →</p>
-        <div className="depo-prints">
+        <p className="gallery-hint">toque para ampliar</p>
+        <div className="depo-gallery">
           {DEPOIMENTOS.map((src, i) => (
-            <figure key={i}>
+            <figure
+              key={i}
+              className={i === 0 ? 'wide' : ''}
+              onClick={() => setZoom(src)}
+            >
               <img src={src} alt={`Depoimento de aluna ${i + 1}`} loading="lazy" />
             </figure>
           ))}
@@ -198,22 +220,6 @@ export default function CursoAlongamento() {
           <a className="cta-btn" href={inscricaoHref} target="_blank" rel="noopener noreferrer">
             <IconWhatsapp /> Quero me inscrever
           </a>
-        </div>
-      </section>
-
-      {/* BÔNUS */}
-      <section className="course-section reveal">
-        <h2 className="section-label">Bônus inclusos</h2>
-        <div className="bonus-list">
-          {BONUS.map((b) => (
-            <div className="bonus-item" key={b.t}>
-              <span className="bonus-ico">{b.icon}</span>
-              <span className="bonus-body">
-                <strong>{b.t}</strong>
-                <span>{b.d}</span>
-              </span>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -257,6 +263,16 @@ export default function CursoAlongamento() {
           Garantir vaga
         </a>
       </div>
+
+      {/* LIGHTBOX DEPOIMENTOS */}
+      {zoom && (
+        <div className="lightbox" onClick={() => setZoom(null)} role="dialog" aria-modal="true">
+          <button className="lb-close" aria-label="Fechar" onClick={() => setZoom(null)}>
+            ×
+          </button>
+          <img src={zoom} alt="Depoimento ampliado" onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
     </div>
   )
 }
