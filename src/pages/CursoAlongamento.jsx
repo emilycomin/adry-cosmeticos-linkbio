@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { wa, useReveal, IconWhatsapp } from '../lib.jsx'
 
+const COURSE_DATE = '23 de agosto'
 const INSCRICAO_MSG =
-  'Olá! Tenho interesse no Curso de Alongamento em Gel (Molde F1 e Fibra de Vidro) com a Adriana. Quero mais informações e garantir minha vaga! ✨'
+  'Olá! Tenho interesse no Curso de Alongamento em Gel com a Adriana (turma de 23/08). Quero mais informações e garantir minha vaga! ✨'
 const inscricaoHref = wa(INSCRICAO_MSG)
 
 const CONTEUDO = [
@@ -48,18 +49,9 @@ const GALERIA = [
 ]
 
 const DEPOIMENTOS = [
-  {
-    txt: 'Fiz o curso de esmaltação em gel e alongamento e foi muito produtivo. Aprendi muito e ajudou demais na minha profissão — fiquei com mais confiança em meus atendimentos. Agradeço muito pelo aprendizado.',
-    autor: 'Aluna do curso',
-  },
-  {
-    txt: 'Fazer o curso de alongamento e esmaltação em gel com você foi super satisfatório. Sua didática é maravilhosa e me deu toda a confiança que eu precisava. O aprendizado elevou o nível do meu atendimento, garantindo um acabamento perfeito, seguro e duradouro. Minhas clientes saem satisfeitas e amam o resultado!',
-    autor: 'Aluna do curso',
-  },
-  {
-    txt: 'Procurei algo que pudesse me agregar mais e encontrei a instrutora Adriana. Uma excelente educadora, que te ajuda, ensina e tem carinho pelo que faz. Foi maravilhoso aprender com quem sabe ensinar — e ainda tem uma loja com todos os produtos que você precisa para iniciar. Muito carismática, ela te acolhe mesmo!',
-    autor: 'Vanessa Rodrigues · Studio em Gravataí',
-  },
+  '/images/cursos/depoimento-1.jpg',
+  '/images/cursos/depoimento-2.jpg',
+  '/images/cursos/depoimento-3.jpg',
 ]
 
 export default function CursoAlongamento() {
@@ -82,7 +74,7 @@ export default function CursoAlongamento() {
           <br />
           em Gel
         </h1>
-        <p className="course-sub">Molde F1 &amp; Fibra de Vidro</p>
+        <p className="course-sub">com Molde F1 e Fibra de Vidro</p>
         <p className="course-tagline">“Dando asas ao seu talento”</p>
 
         <div className="course-hero-img">
@@ -92,6 +84,16 @@ export default function CursoAlongamento() {
         <p className="instructor">
           com <strong>Adriana Christo</strong> · Instrutora
         </p>
+
+        {/* DATA DA PRÓXIMA TURMA */}
+        <div className="date-badge">
+          <span className="db-ico">📅</span>
+          <span className="db-text">
+            <span className="db-label">Próxima turma</span>
+            <span className="db-date">{COURSE_DATE}</span>
+          </span>
+          <span className="db-note">Vagas limitadas</span>
+        </div>
 
         <div className="pitch">
           🏆 O mercado precisa de qualidade — e você precisa estar pronta. 🚀
@@ -147,6 +149,31 @@ export default function CursoAlongamento() {
         </div>
       </section>
 
+      {/* GALERIA */}
+      <section className="course-section reveal">
+        <h2 className="section-label">O curso na prática</h2>
+        <div className="course-gallery">
+          {GALERIA.map((src, i) => (
+            <figure key={i}>
+              <img src={src} alt={`Curso de alongamento em gel ${i + 1}`} loading="lazy" />
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* DEPOIMENTOS (prints) */}
+      <section className="course-section reveal">
+        <h2 className="section-label">O que dizem as alunas</h2>
+        <p className="swipe-hint">deslize para ver →</p>
+        <div className="depo-prints">
+          {DEPOIMENTOS.map((src, i) => (
+            <figure key={i}>
+              <img src={src} alt={`Depoimento de aluna ${i + 1}`} loading="lazy" />
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* INVESTIMENTO */}
       <section className="course-section reveal">
         <h2 className="section-label">Investimento</h2>
@@ -190,37 +217,14 @@ export default function CursoAlongamento() {
         </div>
       </section>
 
-      {/* GALERIA */}
-      <section className="course-section reveal">
-        <h2 className="section-label">O curso na prática</h2>
-        <div className="course-gallery">
-          {GALERIA.map((src, i) => (
-            <figure key={i}>
-              <img src={src} alt={`Curso de alongamento em gel ${i + 1}`} loading="lazy" />
-            </figure>
-          ))}
-        </div>
-      </section>
-
-      {/* DEPOIMENTOS */}
-      <section className="course-section reveal">
-        <h2 className="section-label">O que dizem as alunas</h2>
-        <div className="course-reviews">
-          {DEPOIMENTOS.map((d, i) => (
-            <blockquote className="course-review" key={i}>
-              <span className="qm">“</span>
-              <p>{d.txt}</p>
-              <footer>— {d.autor}</footer>
-            </blockquote>
-          ))}
-        </div>
-      </section>
-
       {/* CTA FINAL */}
       <section className="course-section reveal">
         <div className="final-cta">
           <h3>Pronta para elevar o seu nível?</h3>
-          <p>As vagas são limitadas para garantir a qualidade da prática. Fale comigo e reserve a sua.</p>
+          <p>
+            Próxima turma em <strong>{COURSE_DATE}</strong> · vagas limitadas para garantir a
+            qualidade da prática. Fale comigo e reserve a sua.
+          </p>
           <a className="cta-btn light" href={inscricaoHref} target="_blank" rel="noopener noreferrer">
             <IconWhatsapp /> Falar no WhatsApp
           </a>
@@ -246,8 +250,8 @@ export default function CursoAlongamento() {
       {/* BARRA FIXA DE CONVERSÃO */}
       <div className="sticky-cta">
         <div className="sc-price">
-          <small>a partir de</small>
-          <strong>4x R$ 230,63</strong>
+          <small>Próxima turma</small>
+          <strong>📅 {COURSE_DATE}</strong>
         </div>
         <a className="sc-btn" href={inscricaoHref} target="_blank" rel="noopener noreferrer">
           Garantir vaga

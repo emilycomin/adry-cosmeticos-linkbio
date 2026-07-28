@@ -1288,3 +1288,89 @@ img {
   background: #1fb457;
   transform: translateY(-1px);
 }
+
+/* ---------- Data da próxima turma ---------- */
+.date-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--blush-100), var(--teal-50));
+  border: 1px solid var(--teal-100);
+  box-shadow: var(--shadow-sm);
+}
+.date-badge .db-ico {
+  font-size: 24px;
+}
+.date-badge .db-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+  flex: 1;
+}
+.date-badge .db-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.date-badge .db-date {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--teal-900);
+}
+.date-badge .db-note {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--blush-500);
+  padding: 5px 10px;
+  border-radius: 999px;
+  text-align: center;
+}
+
+/* ---------- Depoimentos em print ---------- */
+.swipe-hint {
+  text-align: right;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--ink-soft);
+  margin: -6px 2px 12px;
+}
+.depo-prints {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 0 12px;
+  margin: 0 -22px;
+  padding-left: 22px;
+  padding-right: 22px;
+  scrollbar-width: none;
+}
+.depo-prints::-webkit-scrollbar {
+  display: none;
+}
+.depo-prints figure {
+  flex: 0 0 auto;
+  width: 74%;
+  max-width: 300px;
+  scroll-snap-align: center;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(20, 125, 128, 0.08);
+  background: #fff;
+}
+.depo-prints img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
