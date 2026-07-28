@@ -770,3 +770,521 @@ img {
     font-size: 20px;
   }
 }
+
+/* ================================================================== */
+/*  Item de submenu que abre uma página                               */
+/* ================================================================== */
+.submenu-list li a.is-page {
+  background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
+  color: var(--white);
+  font-weight: 500;
+}
+.submenu-list li a.is-page .sub-arrow {
+  color: rgba(255, 255, 255, 0.9);
+}
+.sub-tag {
+  font-size: 9.5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ================================================================== */
+/*  PÁGINA DO CURSO                                                    */
+/* ================================================================== */
+.course {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 0 96px;
+}
+
+.course-top {
+  padding: 18px 22px 0;
+}
+.back-link {
+  font-size: 12.5px;
+  letter-spacing: 1px;
+  color: var(--ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+.back-link:hover {
+  color: var(--teal-700);
+}
+
+/* ---------- Hero do curso ---------- */
+.course-hero {
+  text-align: center;
+  padding: 20px 22px 0;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teal-700);
+  background: var(--teal-50);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.course-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(40px, 13vw, 54px);
+  line-height: 1.02;
+  color: var(--teal-900);
+  margin: 16px 0 0;
+}
+.course-sub {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--blush-500);
+  margin-top: 6px;
+}
+.course-tagline {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+.course-hero-img {
+  margin: 22px 0 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4 / 4.6;
+}
+.course-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.instructor {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+.instructor strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.pitch {
+  margin-top: 16px;
+  background: var(--cream-2);
+  border-radius: 16px;
+  padding: 14px 18px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--teal-900);
+  line-height: 1.5;
+}
+
+/* ---------- Botão CTA ---------- */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 18px;
+  background: #25d366;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 15px;
+  border-radius: 40px;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.cta-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(37, 211, 102, 0.45);
+}
+.cta-btn.light {
+  background: var(--white);
+  color: var(--teal-700);
+  box-shadow: var(--shadow-sm);
+}
+.cta-btn.light svg {
+  fill: #25d366;
+}
+
+/* ---------- Seções do curso ---------- */
+.course-section {
+  padding: 0 22px;
+  margin-top: 44px;
+}
+
+/* checklist */
+.check-list {
+  list-style: none;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 8px 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(20, 125, 128, 0.07);
+}
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 0;
+  font-size: 13.5px;
+  color: var(--ink);
+  border-bottom: 1px dashed var(--cream-2);
+}
+.check-list li:last-child {
+  border-bottom: none;
+}
+.check {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+/* timeline / cronograma */
+.timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 8px;
+}
+.timeline li {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--teal-100);
+}
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li:last-child::before { display: none; }
+.tl-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--teal-500);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 1;
+}
+.tl-body {
+  padding-top: 3px;
+}
+.tl-body strong {
+  display: block;
+  font-size: 14.5px;
+  color: var(--ink);
+  font-weight: 600;
+}
+.tl-body span {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+
+/* info cards (duração / certificado) */
+.info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.info-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(20, 125, 128, 0.07);
+}
+.info-card .ic-ico {
+  font-size: 26px;
+  display: block;
+}
+.info-card strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--teal-900);
+  margin: 6px 0 4px;
+}
+.info-card span {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* investimento */
+.price-card {
+  background: linear-gradient(160deg, var(--teal-700), var(--teal-900));
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+.price-old-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+.price-main {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 6px 0 2px;
+}
+.price-main span {
+  font-size: 26px;
+  vertical-align: top;
+}
+.price-note {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.price-split {
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 300;
+}
+.price-split strong {
+  font-weight: 600;
+}
+.price-details {
+  list-style: none;
+  text-align: left;
+  margin: 18px 0 4px;
+}
+.price-details li {
+  font-size: 12.5px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  line-height: 1.5;
+}
+.price-details strong {
+  font-weight: 600;
+  color: #fff;
+}
+.price-details small {
+  display: block;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+}
+.price-card .cta-btn {
+  margin-top: 18px;
+}
+
+/* bônus */
+.bonus-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bonus-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 15px 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(20, 125, 128, 0.07);
+}
+.bonus-ico {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.bonus-body strong {
+  display: block;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 600;
+}
+.bonus-body span {
+  font-size: 12px;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+
+/* galeria do curso */
+.course-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.course-gallery figure {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 3 / 4;
+}
+.course-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.course-gallery figure:hover img {
+  transform: scale(1.05);
+}
+
+/* depoimentos */
+.course-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.course-review {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(20, 125, 128, 0.07);
+}
+.course-review .qm {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  line-height: 0.3;
+  color: var(--teal-100);
+}
+.course-review p {
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 8px 0 12px;
+  font-style: italic;
+}
+.course-review footer {
+  font-size: 12px;
+  color: var(--teal-700);
+  font-weight: 500;
+}
+
+/* CTA final */
+.final-cta {
+  background: var(--cream-2);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  text-align: center;
+}
+.final-cta h3 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--teal-900);
+}
+.final-cta p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--ink-soft);
+  margin: 10px 0 4px;
+  line-height: 1.6;
+}
+.phone-line {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--teal-700);
+}
+.back-foot {
+  color: var(--teal-700);
+  border-bottom: 1px solid var(--teal-100);
+}
+
+/* barra fixa de conversão */
+.sticky-cta {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14px;
+  z-index: 60;
+  width: min(440px, calc(100% - 24px));
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  border-radius: 50px;
+  padding: 8px 8px 8px 20px;
+  box-shadow: 0 12px 34px rgba(15, 94, 96, 0.25);
+  border: 1px solid rgba(20, 125, 128, 0.1);
+}
+.sc-price {
+  flex: 1;
+  line-height: 1.15;
+}
+.sc-price small {
+  display: block;
+  font-size: 9.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.sc-price strong {
+  font-size: 15px;
+  color: var(--teal-900);
+  font-weight: 600;
+}
+.sc-btn {
+  background: #25d366;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 40px;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.sc-btn:hover {
+  background: #1fb457;
+  transform: translateY(-1px);
+}
