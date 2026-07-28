@@ -1460,3 +1460,101 @@ img {
   cursor: pointer;
   z-index: 101;
 }
+
+/* ================================================================== */
+/*  Card do curso em destaque (home)                                  */
+/* ================================================================== */
+.course-highlight {
+  display: block;
+  margin-top: 26px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(155deg, var(--teal-700), var(--teal-900));
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.course-highlight:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.ch-media {
+  position: relative;
+  height: 158px;
+  overflow: hidden;
+}
+.ch-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.ch-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 35%, rgba(15, 94, 96, 0.65));
+}
+.ch-flag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  background: var(--blush-500);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.ch-body {
+  padding: 15px 18px 18px;
+}
+.ch-eyebrow {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+.ch-title {
+  font-family: var(--font-serif);
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-top: 3px;
+}
+.ch-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.92);
+}
+.ch-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.ch-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  padding: 10px 17px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+.course-highlight:hover .ch-cta {
+  background: rgba(255, 255, 255, 0.27);
+}
+.ch-cta > span {
+  font-size: 17px;
+  line-height: 1;
+}
