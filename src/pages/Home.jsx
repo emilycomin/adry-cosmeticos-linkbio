@@ -224,13 +224,9 @@ export default function Home() {
 
       {/* CURSO EM DESTAQUE */}
       <Link to="/curso-alongamento-gel" className="course-highlight reveal">
-        <div className="ch-media">
-          <img src="/images/produto-1.jpg" alt="Curso de Alongamento em Gel com Adriana" loading="lazy" />
-          <span className="ch-flag">✨ Nova turma · 23/08</span>
-        </div>
         <div className="ch-body">
-          <span className="ch-eyebrow">Curso presencial</span>
-          <h2 className="ch-title">Alongamento em Gel</h2>
+          <span className="ch-flag-inline">✨ Nova turma · 23/08</span>
+          <h2 className="ch-title">Curso de Alongamento em Gel</h2>
           <div className="ch-meta">
             <span>📅 23 de agosto</span>
             <span>🕗 09h às 18h</span>
