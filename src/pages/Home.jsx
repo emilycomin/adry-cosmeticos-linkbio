@@ -229,7 +229,7 @@ export default function Home() {
           <h2 className="ch-title">Curso de Alongamento em Gel</h2>
           <div className="ch-meta">
             <span>📅 23 de agosto</span>
-            <span>🕗 09h às 18h</span>
+            <span>🕗 13h às 19h</span>
           </div>
           <span className="ch-cta">
             Ver o curso e garantir vaga <span>›</span>

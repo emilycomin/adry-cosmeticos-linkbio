@@ -26,11 +26,6 @@ const CRONOGRAMA = [
 
 const BONUS = [
   {
-    icon: '🎁',
-    t: 'Kit básico de produtos',
-    d: 'Para alongamento em fibra de vidro e F1 (não inclui eletrônicos)',
-  },
-  {
     icon: '💬',
     t: 'Suporte por 30 dias',
     d: 'Acompanhamento após o curso, via WhatsApp',
@@ -101,7 +96,7 @@ export default function CursoAlongamento() {
               <span className="ti-ico">🕗</span>
               <span className="ti-text">
                 <small>Horário</small>
-                <strong>09:00 às 18:00</strong>
+                <strong>13:00 às 19:00</strong>
               </span>
             </li>
             <li>
@@ -175,8 +170,8 @@ export default function CursoAlongamento() {
         <div className="info-cards">
           <div className="info-card">
             <span className="ic-ico">🕗</span>
-            <strong>8 horas</strong>
-            <span>das 9h às 18h, com 1h de intervalo</span>
+            <strong>6 horas</strong>
+            <span>das 13h às 19h</span>
           </div>
           <div className="info-card">
             <span className="ic-ico">📜</span>
@@ -219,21 +214,18 @@ export default function CursoAlongamento() {
       <section className="course-section reveal">
         <h2 className="section-label">Investimento</h2>
         <div className="price-card">
-          <span className="price-old-label">Valor total</span>
+          <span className="price-old-label">Turma de 23 de agosto</span>
           <div className="price-main">
-            R$ 1.050<span>,00</span>
+            R$ 590<span>,00</span>
           </div>
           <span className="price-note">à vista (dinheiro ou PIX)</span>
           <div className="price-split">
-            ou em até <strong>4x de R$ 230,63</strong> no cartão
+            ou <strong>parcelado no cartão</strong>
           </div>
           <ul className="price-details">
             <li>
-              <strong>Inscrição de R$ 250,00</strong> para garantir a vaga
-              <small>não reembolsável em caso de desistência ou não comparecimento</small>
-            </li>
-            <li>
-              Saldo pago <strong>até o dia do curso</strong>, à vista ou no cartão
+              <strong>Vagas limitadas</strong>
+              <small>garanta a sua fazendo a inscrição pelo WhatsApp</small>
             </li>
           </ul>
           <a className="cta-btn" href={inscricaoHref} target="_blank" rel="noopener noreferrer">
