@@ -224,8 +224,11 @@ export default function CursoAlongamento() {
           </div>
           <ul className="price-details">
             <li>
-              <strong>Vagas limitadas</strong>
-              <small>garanta a sua fazendo a inscrição pelo WhatsApp</small>
+              <strong>Inscrição de R$ 150,00</strong> para garantir a vaga
+              <small>o valor faz parte do total do curso</small>
+            </li>
+            <li>
+              Saldo de <strong>R$ 440,00</strong> pago até o dia do curso
             </li>
           </ul>
           <a className="cta-btn" href={inscricaoHref} target="_blank" rel="noopener noreferrer">
