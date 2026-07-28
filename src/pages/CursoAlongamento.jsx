@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { wa, useReveal, IconWhatsapp } from '../lib.jsx'
+import { wa, useReveal, IconWhatsapp, ADDRESS, MAPS_URL } from '../lib.jsx'
 
 const COURSE_DATE = '23 de agosto'
 const INSCRICAO_MSG =
@@ -86,14 +86,34 @@ export default function CursoAlongamento() {
           com <strong>Adriana Christo</strong> · Instrutora
         </p>
 
-        {/* DATA DA PRÓXIMA TURMA */}
-        <div className="date-badge">
-          <span className="db-ico">📅</span>
-          <span className="db-text">
-            <span className="db-label">Próxima turma</span>
-            <span className="db-date">{COURSE_DATE}</span>
-          </span>
-          <span className="db-note">Vagas limitadas</span>
+        {/* DADOS DA PRÓXIMA TURMA */}
+        <div className="turma-card">
+          <span className="turma-flag">Vagas limitadas</span>
+          <ul className="turma-info">
+            <li>
+              <span className="ti-ico">📅</span>
+              <span className="ti-text">
+                <small>Próxima turma</small>
+                <strong>{COURSE_DATE}</strong>
+              </span>
+            </li>
+            <li>
+              <span className="ti-ico">🕗</span>
+              <span className="ti-text">
+                <small>Horário</small>
+                <strong>09:00 às 18:00</strong>
+              </span>
+            </li>
+            <li>
+              <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+                <span className="ti-ico">📍</span>
+                <span className="ti-text">
+                  <small>Local</small>
+                  <strong>{ADDRESS}</strong>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
 
         <div className="pitch">
