@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Home from './pages/Home.jsx'
 import CursoAlongamento from './pages/CursoAlongamento.jsx'
 
@@ -21,6 +22,7 @@ export default function App() {
         {/* fallback: qualquer rota desconhecida volta para a home */}
         <Route path="*" element={<Home />} />
       </Routes>
+      <Analytics />
     </>
   )
 }
