@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import Home from './pages/Home.jsx'
 import CursoAlongamento from './pages/CursoAlongamento.jsx'
+import CursoEsmaltacao from './pages/CursoEsmaltacao.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -19,6 +20,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/curso-alongamento-gel" element={<CursoAlongamento />} />
+        <Route path="/curso-esmaltacao-gel" element={<CursoEsmaltacao />} />
         {/* fallback: qualquer rota desconhecida volta para a home */}
         <Route path="*" element={<Home />} />
       </Routes>

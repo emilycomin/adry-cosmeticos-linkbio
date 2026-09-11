@@ -52,7 +52,7 @@ const SERVICES = [
       { label: 'Iniciante', href: wa('Olá! Tenho interesse no curso Iniciante da Adry Cosméticos 🎓') },
       { label: 'Cutilagem perfeita', href: wa('Olá! Tenho interesse no curso de Cutilagem perfeita da Adry Cosméticos 🎓') },
       { label: 'Alongamento em gel', to: '/curso-alongamento-gel', tag: 'ver página' },
-      { label: 'Esmaltação em gel', href: wa('Olá! Tenho interesse no curso de Esmaltação em gel da Adry Cosméticos 🎓') },
+      { label: 'Esmaltação em gel', to: '/curso-esmaltacao-gel', tag: 'ver página' },
     ],
   },
 ]
