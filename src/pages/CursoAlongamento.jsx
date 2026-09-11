@@ -34,6 +34,11 @@ const BONUS = [
     t: '10% de desconto',
     d: 'Em compras realizadas no dia do curso, aqui na loja',
   },
+  {
+    icon: '📜',
+    t: 'Certificado',
+    d: 'De conclusão do curso',
+  },
 ]
 
 const GALERIA = [
@@ -85,10 +90,10 @@ export default function CursoAlongamento() {
           <span className="turma-flag">Inscrições abertas</span>
           <ul className="turma-info">
             <li>
-              <span className="ti-ico">🕗</span>
+              <span className="ti-ico">🕐</span>
               <span className="ti-text">
-                <small>Horário</small>
-                <strong>13:00 às 19:00</strong>
+                <small>Carga horária</small>
+                <strong>6 horas</strong>
               </span>
             </li>
             <li>
@@ -154,22 +159,6 @@ export default function CursoAlongamento() {
               </span>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* DURAÇÃO */}
-      <section className="course-section reveal">
-        <div className="info-cards">
-          <div className="info-card">
-            <span className="ic-ico">🕗</span>
-            <strong>6 horas</strong>
-            <span>das 13h às 19h</span>
-          </div>
-          <div className="info-card">
-            <span className="ic-ico">📜</span>
-            <strong>Certificado</strong>
-            <span>entregue no fim do curso</span>
-          </div>
         </div>
       </section>
 
