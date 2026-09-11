@@ -2,9 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { wa, useReveal, IconWhatsapp, ADDRESS, MAPS_URL } from '../lib.jsx'
 
-const COURSE_DATE = '23 de agosto'
 const INSCRICAO_MSG =
-  'Olá! Tenho interesse no Curso de Alongamento em Gel com a Adriana (turma de 23/08). Quero mais informações e garantir minha vaga! ✨'
+  'Olá! Tenho interesse no Curso de Alongamento em Gel com a Adriana. Quero mais informações e garantir minha vaga! ✨'
 const inscricaoHref = wa(INSCRICAO_MSG)
 
 const CONTEUDO = [
@@ -81,17 +80,10 @@ export default function CursoAlongamento() {
           com <strong>Adriana Christo</strong> · Instrutora
         </p>
 
-        {/* DADOS DA PRÓXIMA TURMA */}
+        {/* INFORMAÇÕES DO CURSO */}
         <div className="turma-card">
-          <span className="turma-flag">Vagas limitadas</span>
+          <span className="turma-flag">Inscrições abertas</span>
           <ul className="turma-info">
-            <li>
-              <span className="ti-ico">📅</span>
-              <span className="ti-text">
-                <small>Próxima turma</small>
-                <strong>{COURSE_DATE}</strong>
-              </span>
-            </li>
             <li>
               <span className="ti-ico">🕗</span>
               <span className="ti-text">
@@ -214,7 +206,7 @@ export default function CursoAlongamento() {
       <section className="course-section reveal">
         <h2 className="section-label">Investimento</h2>
         <div className="price-card">
-          <span className="price-old-label">Turma de 23 de agosto</span>
+          <span className="price-old-label">Valor do curso</span>
           <div className="price-main">
             R$ 590<span>,00</span>
           </div>
@@ -242,8 +234,7 @@ export default function CursoAlongamento() {
         <div className="final-cta">
           <h3>Pronta para elevar o seu nível?</h3>
           <p>
-            Próxima turma em <strong>{COURSE_DATE}</strong> · vagas limitadas para garantir a
-            qualidade da prática. Fale comigo e reserve a sua.
+            Vagas limitadas para garantir a qualidade da prática. Fale comigo e reserve a sua.
           </p>
           <a className="cta-btn light" href={inscricaoHref} target="_blank" rel="noopener noreferrer">
             <IconWhatsapp /> Falar no WhatsApp
@@ -270,8 +261,8 @@ export default function CursoAlongamento() {
       {/* BARRA FIXA DE CONVERSÃO */}
       <div className="sticky-cta">
         <div className="sc-price">
-          <small>Próxima turma</small>
-          <strong>📅 {COURSE_DATE}</strong>
+          <small>Investimento</small>
+          <strong>R$ 590,00</strong>
         </div>
         <a className="sc-btn" href={inscricaoHref} target="_blank" rel="noopener noreferrer">
           Garantir vaga
