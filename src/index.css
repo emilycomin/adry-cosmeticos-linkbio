@@ -859,11 +859,12 @@ img {
   margin-top: 10px;
 }
 .course-hero-img {
-  margin: 22px 0 0;
+  margin: 22px auto 0;
+  max-width: 270px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  aspect-ratio: 4 / 4.6;
+  aspect-ratio: 4 / 4.2;
 }
 .course-hero-img img {
   width: 100%;

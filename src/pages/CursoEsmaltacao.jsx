@@ -84,7 +84,7 @@ export default function CursoEsmaltacao() {
         <p className="course-tagline">“Dando asas ao seu talento”</p>
 
         <div className="course-hero-img">
-          <img src="/images/produto-2.jpg" alt="Adriana demonstrando esmaltação em gel" />
+          <img src="/images/adry-sobre.jpg" alt="Adriana, instrutora do curso de esmaltação em gel" />
         </div>
 
         <p className="instructor">
