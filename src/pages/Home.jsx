@@ -222,21 +222,6 @@ export default function Home() {
         <Location />
       </header>
 
-      {/* CURSO EM DESTAQUE */}
-      <Link to="/curso-alongamento-gel" className="course-highlight reveal">
-        <div className="ch-body">
-          <span className="ch-flag-inline">✨ Nova turma · 23/08</span>
-          <h2 className="ch-title">Curso de Alongamento em Gel</h2>
-          <div className="ch-meta">
-            <span>📅 23 de agosto</span>
-            <span>🕗 13h às 19h</span>
-          </div>
-          <span className="ch-cta">
-            Ver o curso e garantir vaga <span>›</span>
-          </span>
-        </div>
-      </Link>
-
       {/* SERVIÇOS (com submenu) */}
       <section className="section links reveal" aria-label="Serviços">
         {SERVICES.map((svc) => (
