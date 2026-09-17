@@ -66,7 +66,7 @@ const GALLERY = [
 
 // 0 = domingo ... 6 = sábado
 const HOURS = [
-  { label: 'Segunda-feira', open: '14:00', close: '18:00' },
+  { label: 'Segunda-feira', open: null, close: null },
   { label: 'Terça-feira', open: '09:00', close: '18:00' },
   { label: 'Quarta-feira', open: '09:00', close: '18:00' },
   { label: 'Quinta-feira', open: '09:00', close: '18:00' },
